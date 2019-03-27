@@ -654,7 +654,8 @@ if ($ExistingActionGroupName)
 {
 	Write-Verbose "User provided existing action group"
 	$type = "Microsoft.Insights/ActionGroups"
-	$actiongroupFindResult = Find-AzureRmResource -ResourceType $type -ResourceNameEquals $ExistingActionGroupName
+	#$actiongroupFindResult = Find-AzureRmResource -ResourceType $type -ResourceNameEquals $ExistingActionGroupName
+	$actiongroupFindResult = Get-AzureRmResource -ResourceType $type -ResourceNameEquals $ExistingActionGroupName
 
 	if ($actiongroupFindResult)
 	{
